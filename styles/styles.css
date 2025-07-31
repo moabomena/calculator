@@ -9,38 +9,38 @@
 }
 
 .wrapper > button {
-  height: 20vh;
-  width: 20vh;
+  height: 10vh;
+  width: 10vh;
   color: #046d30;
   background-color: #67e78d;
   border: 2px solid #4d755f;
-  font-size: 35pt;
+  font-size: 20pt;
   text-align: center;
 }
 
 .operator {
   background-color: #a8dabe;
-  height: 20vh;
-  width: 20vh;
+  height: 10vh;
+  width: 10vh;
   color: #173d27;
   border: 2px solid #4d755f;
-  font-size: 50pt;
+  font-size: 30pt;
   text-align: center;
 }
 
 .operator-egual {
   background-color: #1a3a26;
-  height: 20vh;
-  width: 20vh;
+  height: 10vh;
+  width: 10vh;
   color: #a7e4c0;
   border: 2px solid #4d755f;
-  font-size: 50pt;
+  font-size: 30pt;
   text-align: center;
 }
 
 .view-result {
-  width: 35rem;
-  height: 10rem;
+  width: 19rem;
+  height:8rem;
   background-color: #a8dabe;
   font-size: 50pt;
   margin: 0 auto 0.2em auto;
@@ -49,5 +49,9 @@
   align-items: flex-end;
   padding: 0 4px;
   max-width: 35rem;
+}
+
+.bckp {
+  height: 20pt;
 }
 
