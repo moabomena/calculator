@@ -5,6 +5,8 @@ let listX = [];
 let listY = [];
 let historic = "";
 let isNewOperation = false;
+let historicList = [];
+
 
 function setHistoric() {
   historic = x;
@@ -109,6 +111,15 @@ function result() {
   const elementSum = document.getElementById("view-result");
   elementSum.textContent = result;
   isNewOperation = true;
+  let calcItem = calcItemHistoric(result);
+  let hasOnList = findElementInList(calcItem);
+  if (!hasOnList) {
+    addListHistoric(calcItem);
+  }
+}
+
+function findElementInList(element) {
+  return historicList.includes(element);
 }
 
 function backNumber(list, number) {
@@ -138,4 +149,18 @@ function backspace() {
   listX = backNumber(listX, x);
   listY = backNumber(listY, y);
   updateNumbers();
+}
+
+function calcItemHistoric(result) {
+  return historic + " = " + result;
+}
+
+function addListHistoric(calculu) {
+  historicList.push(calculu);
+  loadHistoricList();
+}
+
+function loadHistoricList() {
+  const list = document.getElementById("list-historic");
+  list.innerHTML = historicList.map((calc) => `<li>${calc}</li>`).reverse().join("");
 }

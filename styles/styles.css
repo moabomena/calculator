@@ -9,7 +9,7 @@
 }
 
 .ac {
-   background-color: #801111;
+  background-color: #801111;
   height: 10vh;
   width: 10vh;
   color: #fffbfb;
@@ -67,4 +67,64 @@
 
 .bckp {
   height: 20pt;
+}
+
+.historic-field {
+  position: relative;
+  float: left;
+  width: 18rem;
+  height: 33rem;
+  border-radius: 12px;
+  padding: 0.4rem;
+  justify-items: flex-start;
+  background-color: #a8dabe;
+  justify-content: baseline;
+}
+
+.historic-field > h2 {
+  margin-left: 1rem;
+  text-decoration: underline;
+  color: #1a3a26;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+ #list-historic {
+  height: 25rem;
+  width: 15rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  list-style: none;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+} 
+
+#list-historic li {
+  margin: 0 0 0.5rem 1rem;
+  position: relative;
+  padding: 10px 0; 
+}
+
+#list-historic li:not(:first-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300%;
+  height: 1px;
+  background-color: #2c7429;
+} 
+
+#list-historic li:first-child {
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.view {
+  padding-left: 2rem;
+  position: relative;
+  float: left;
+}
+body {
+  padding: 2rem;
 }
