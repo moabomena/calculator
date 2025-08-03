@@ -4,7 +4,7 @@ let operator = "";
 let listX = [];
 let listY = [];
 let historic = "";
-let isAc = false;
+let isNewOperation = false;
 
 function setHistoric() {
   historic = x;
@@ -40,6 +40,9 @@ function multiplication() {
 }
 
 function getNumber(number) {
+  if (isNewOperation) {
+    clean();
+  }
   if (operator === "") {
     if (x === "0") {
       x = number;
@@ -58,6 +61,7 @@ function getNumber(number) {
     updateList(listY, y);
   }
   setHistoric();
+  isNewOperation = false;
 }
 
 function showNumberView(number) {
@@ -104,6 +108,7 @@ function result() {
   setHistoric();
   const elementSum = document.getElementById("view-result");
   elementSum.textContent = result;
+  isNewOperation = true;
 }
 
 function backNumber(list, number) {
@@ -118,6 +123,8 @@ function backNumber(list, number) {
     number = list.join("");
     const updateNumber = document.getElementById("view-result");
     updateNumber.textContent = number;
+  } else {
+    clean();
   }
   return list;
 }
