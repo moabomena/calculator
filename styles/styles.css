@@ -8,6 +8,21 @@
   margin: 0 auto;
 }
 
+.ac {
+   background-color: #801111;
+  height: 10vh;
+  width: 10vh;
+  color: #fffbfb;
+  border: 2px solid #ec5555;
+  font-size: 18pt;
+  text-align: center;
+}
+
+.historic {
+  justify-items: flex-start;
+  font-size: 18pt;
+}
+
 .wrapper > button {
   height: 10vh;
   width: 10vh;
@@ -40,13 +55,12 @@
 
 .view-result {
   width: 19rem;
-  height:8rem;
+  height: 8rem;
   background-color: #a8dabe;
   font-size: 50pt;
   margin: 0 auto 0.2em auto;
-  display: flex;
-  justify-items: flex-end;
-  align-items: flex-end;
+  display: flexbox;
+  justify-items: flex-start;
   padding: 0 4px;
   max-width: 35rem;
 }
@@ -54,4 +68,3 @@
 .bckp {
   height: 20pt;
 }
-

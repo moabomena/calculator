@@ -8,37 +8,47 @@
   </head>
   <body>
     <div class="view">
-        <div class="view-result">12.23</div>
-        <div class="wrapper">
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
+      <div class="view-result">
+        <div class="historic" id="historic"></div>
+        <div id="view-result">0</div>
+      </div>
+      <div class="wrapper">
         <div>
-          <button class="operator">x</button>
+          <button class="ac" onclick="clean()">AC</button>
         </div>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
+        <button id="" class=""></button>
+        <button id="" class=""></button>
         <div>
-          <button class="operator">-</button>
+          <button onclick="getOperator('/')" class="operator">/</button>
         </div>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
+        <button onclick="getNumber('7')">7</button>
+        <button onclick="getNumber('8')">8</button>
+        <button onclick="getNumber('9')">9</button>
         <div>
-          <button class="operator">+</button>
+          <button onclick="getOperator('x')" class="operator">x</button>
         </div>
-        <button>0</button>
+        <button onclick="getNumber('4')">4</button>
+        <button onclick="getNumber('5')">5</button>
+        <button onclick="getNumber('6')">6</button>
+        <div>
+          <button onclick="getOperator('-')" class="operator">-</button>
+        </div>
+        <button onclick="getNumber('1')">1</button>
+        <button onclick="getNumber('2')">2</button>
+        <button onclick="getNumber('3')">3</button>
+        <div>
+          <button onclick="getOperator('+')" class="operator">+</button>
+        </div>
+        <button onclick="getNumber('0')">0</button>
         <button>.</button>
-        <button>
+        <button onclick="backspace()">
           <img class="bckp" src="assets/backspace_green_50.png" />
         </button>
         <div>
-          <button class="operator-egual">=</button>
+          <button onclick="result()" class="operator-egual">=</button>
         </div>
       </div>
     </div>
-
     <script src="scripts/main.js"></script>
   </body>
 </html>
