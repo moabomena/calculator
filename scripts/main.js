@@ -7,7 +7,6 @@ let historic = "";
 let isNewOperation = false;
 let historicList = [];
 
-
 function setHistoric() {
   historic = x;
   historic += " " + operator + " ";
@@ -162,5 +161,15 @@ function addListHistoric(calculu) {
 
 function loadHistoricList() {
   const list = document.getElementById("list-historic");
-  list.innerHTML = historicList.map((calc) => `<li>${calc}</li>`).reverse().join("");
+  list.innerHTML = historicList
+    .map((calc) => `<li>${calc}</li>`)
+    .reverse()
+    .join("");
+}
+
+function cleanListHistoric() {
+  if (historicList.length > 0) {
+    historicList.length = 0;
+    loadHistoricList();
+  } 
 }
