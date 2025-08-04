@@ -10,8 +10,8 @@
 
 .ac {
   background-color: #801111;
-  height: 10vh;
-  width: 10vh;
+  height: 8vh;
+  width: 8vh;
   color: #fffbfb;
   border: 2px solid #ec5555;
   font-size: 18pt;
@@ -24,8 +24,8 @@
 }
 
 .wrapper > button {
-  height: 10vh;
-  width: 10vh;
+  height: 8vh;
+  width: 8vh;
   color: #046d30;
   background-color: #67e78d;
   border: 2px solid #4d755f;
@@ -35,8 +35,8 @@
 
 .operator {
   background-color: #a8dabe;
-  height: 10vh;
-  width: 10vh;
+  height: 8vh;
+  width: 8vh;
   color: #173d27;
   border: 2px solid #4d755f;
   font-size: 30pt;
@@ -45,8 +45,8 @@
 
 .operator-egual {
   background-color: #1a3a26;
-  height: 10vh;
-  width: 10vh;
+  height: 8vh;
+  width: 8vh;
   color: #a7e4c0;
   border: 2px solid #4d755f;
   font-size: 30pt;
@@ -54,8 +54,8 @@
 }
 
 .view-result {
-  width: 19rem;
-  height: 8rem;
+  width: 38vh;
+  height: 15vh;
   background-color: #a8dabe;
   font-size: 50pt;
   margin: 0 auto 0.2em auto;
@@ -72,14 +72,15 @@
 .historic-field {
   position: relative;
   float: left;
-  width: 18rem;
-  height: 33rem;
+  width: 45vh;
+  height: 67vh;
   border-radius: 12px;
   padding: 0.4rem;
   justify-items: flex-start;
   background-color: #a8dabe;
   align-items: start;
   justify-content: space-around;
+  margin: 0 5rem auto 2rem;
 }
 
 .cabecalho > h2 {
@@ -153,9 +154,49 @@ body {
   padding: 8px;
   font-family: "Courier New", Courier, monospace;
   width: 16rem;
-  margin-left: 50%;
   border-top-left-radius: 25px;
   border-bottom-right-radius: 25px;
   border-top-right-radius: 6px;
   border-bottom-left-radius: 6px;
+}
+
+.title {
+  font-size: 24pt;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  position: relative;
+}
+
+.frase {
+  position: relative;
+  float: left;
+  width: 45vh;
+  height: 67vh;
+  border-radius: 12px;
+  padding: 0.4rem;
+  justify-items: flex-start;
+  border:  2px   solid  #a8dabe;
+  align-items: start;
+  justify-content: space-around;
+  margin: 0 5rem auto 5rem;
+  font-size: 26pt; 
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.frase  p {
+  color: #173d25;
+  margin: 4rem auto auto 2rem;
+  font-style: italic;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.autor-frase {
+  font-size: 16pt;
+  font-weight: bold;
 }
