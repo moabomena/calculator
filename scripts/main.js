@@ -89,31 +89,33 @@ function clean() {
 }
 
 function result() {
-  let result = 0;
-  switch (operator) {
-    case "+":
-      result = sum();
-      break;
-    case "-":
-      result = subtraction();
-      break;
-    case "/":
-      result = division();
-      break;
-    case "x":
-      result = multiplication();
-      break;
-    default:
-      break;
-  }
-  setHistoric();
-  const elementSum = document.getElementById("view-result");
-  elementSum.textContent = result;
-  isNewOperation = true;
-  let calcItem = calcItemHistoric(result);
-  let hasOnList = findElementInList(calcItem);
-  if (!hasOnList) {
-    addListHistoric(calcItem);
+  if (operator.length > 0 && y != "0") {
+    let result = 0;
+    switch (operator) {
+      case "+":
+        result = sum();
+        break;
+      case "-":
+        result = subtraction();
+        break;
+      case "/":
+        result = division();
+        break;
+      case "x":
+        result = multiplication();
+        break;
+      default:
+        break;
+    }
+    setHistoric();
+    const elementSum = document.getElementById("view-result");
+    elementSum.textContent = result;
+    isNewOperation = true;
+    let calcItem = calcItemHistoric(result);
+    let hasOnList = findElementInList(calcItem);
+    if (!hasOnList) {
+      addListHistoric(calcItem);
+    }
   }
 }
 
@@ -121,33 +123,33 @@ function findElementInList(element) {
   return historicList.includes(element);
 }
 
-function backNumber(list, number) {
-  if (list.length === 0) {
-    if (number != "0") {
-      list = [...number];
-    }
+function backNumber(number) {
+  let list = [];
+  if (number != "0") {
+    list = [...number];
   }
 
-  if (list.length != 0) {
+  if (list.length > 0) {
     list.pop();
     number = list.join("");
     const updateNumber = document.getElementById("view-result");
     updateNumber.textContent = number;
-  } else {
-    clean();
+    if (list.length === 0) {
+      clean();
+    }
   }
   return list;
 }
 
-function updateNumbers() {
-  x = listX.join("");
-  y = listY.join("");
-}
-
 function backspace() {
-  listX = backNumber(listX, x);
-  listY = backNumber(listY, y);
-  updateNumbers();
+  if (operator.length === 0) {
+    listX = backNumber(x);
+    x = listX.join("");
+  } else {
+    listY = backNumber(y);
+    y = listY.join("");
+  }
+  setHistoric();
 }
 
 function calcItemHistoric(result) {
@@ -157,6 +159,16 @@ function calcItemHistoric(result) {
 function addListHistoric(calculu) {
   historicList.push(calculu);
   loadHistoricList();
+  changeColorButtonCleanList();
+}
+
+function changeColorButtonCleanList() {
+  const button = document.getElementById("clean");
+  if (historicList.length > 0) {
+    button.style.backgroundColor = "#28a85d";
+  } else {
+    button.style.backgroundColor = "#959996ff";
+  }
 }
 
 function loadHistoricList() {
@@ -171,5 +183,6 @@ function cleanListHistoric() {
   if (historicList.length > 0) {
     historicList.length = 0;
     loadHistoricList();
-  } 
+    changeColorButtonCleanList();
+  }
 }

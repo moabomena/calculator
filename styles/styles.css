@@ -82,7 +82,7 @@
   justify-content: space-around;
 }
 
-.cabecaho > h2 {
+.cabecalho > h2 {
   margin-left: 1rem;
   text-decoration: underline;
   color: #1a3a26;
@@ -90,7 +90,7 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.cabecaho {
+.cabecalho {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -98,7 +98,7 @@
 
 .limpar {
   display: flex;
-  background-color: #28a85d;
+  background-color: #959996ff;
   border: none;
   color: aliceblue;
   cursor: pointer;
@@ -145,4 +145,17 @@
 }
 body {
   padding: 2rem;
+}
+
+.autor {
+  color: #173d25;
+  background-color: #a9c9a8;
+  padding: 8px;
+  font-family: "Courier New", Courier, monospace;
+  width: 16rem;
+  margin-left: 50%;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
