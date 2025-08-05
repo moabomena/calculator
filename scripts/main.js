@@ -6,6 +6,21 @@ let listY = [];
 let historic = "";
 let isNewOperation = false;
 let historicList = [];
+let ponto = "";
+
+function getPonto() {
+  ponto = btnPonto.innerText;
+  if (!x.includes(ponto) && y === "0") {
+    x += ponto;
+    showNumberView(x);
+  } else if (!y.includes(ponto) && x != "0" && operator.length > 0) {
+    y += ponto;
+    showNumberView(y);
+  }
+}
+
+const btnPonto = document.getElementById("btn-ponto");
+btnPonto.addEventListener("click", getPonto);
 
 function setHistoric() {
   historic = x;
@@ -107,11 +122,11 @@ function result() {
       default:
         break;
     }
-    setHistoric();
+     showNumberHistoric(historic + " =");
     const elementSum = document.getElementById("view-result");
-    elementSum.textContent = result;
+    elementSum.textContent = result.toFixed(3);
     isNewOperation = true;
-    let calcItem = calcItemHistoric(result);
+    let calcItem = calcItemHistoric(result.toFixed(6));
     let hasOnList = findElementInList(calcItem);
     if (!hasOnList) {
       addListHistoric(calcItem);
