@@ -13,9 +13,18 @@
   height: 8vh;
   width: 8vh;
   color: #fffbfb;
-  border: 2px solid #ec5555;
+  border: 2px solid #831919;
+  border-radius: 0.6rem;
   font-size: 18pt;
   text-align: center;
+  box-shadow:  0px 4px 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+.ac:hover {
+  background-color: inherit;
+  color: #af0909;
+  border: 2px solid #ff2626;
+  box-shadow:  0px 4px 8px 2px #ff4040;
 }
 
 .historic {
@@ -31,6 +40,14 @@
   border: 2px solid #4d755f;
   font-size: 20pt;
   text-align: center;
+  border-radius: 0.6rem;
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
+}
+.wrapper > button:hover {
+  background-color: inherit;
+  color: inherit;
+  border: 2px solid #4fff92;
+  box-shadow: 0px 4px 8px 2px #4fff92;
 }
 
 .operator {
@@ -41,6 +58,14 @@
   border: 2px solid #4d755f;
   font-size: 30pt;
   text-align: center;
+  border-radius: 0.6rem;
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
+}
+.operator:hover {
+  background-color: inherit;
+  color: inherit;
+  border: 2px solid #4fff92;
+  box-shadow: 0px 4px 8px 2px #4fff92;
 }
 
 .operator-egual {
@@ -51,18 +76,30 @@
   border: 2px solid #4d755f;
   font-size: 30pt;
   text-align: center;
+  border-radius: 0.6rem;
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+.operator-egual:hover {
+  background-color: inherit;
+  color: inherit;
+  border: 2px solid #4fff92;
+  box-shadow: 0px 4px 8px 2px #4fff92;
 }
 
 .view-result {
   width: 38vh;
   height: 15vh;
-  background-color: #a8dabe;
+  background: rgba(255, 255, 255, 0.2);
   font-size: 50pt;
   margin: 0 auto 0.2em auto;
-  display: flexbox;
   justify-items: flex-start;
   padding: 0 4px;
   max-width: 35rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .bckp {
@@ -74,13 +111,16 @@
   float: left;
   width: 45vh;
   height: 67vh;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 12px;
   padding: 0.4rem;
   justify-items: flex-start;
-  background-color: #a8dabe;
+  background: rgba(255, 255, 255, 0.2);
   align-items: start;
   justify-content: space-around;
   margin: 0 5rem auto 2rem;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .cabecalho > h2 {
@@ -98,9 +138,8 @@
 }
 
 .limpar {
-  display: flex;
-  background-color: #959996ff;
-  border: none;
+  display: none;
+  border: 1px solid #68ffa2;
   color: aliceblue;
   cursor: pointer;
   margin-left: 7rem;
@@ -109,7 +148,7 @@
 }
 
 #list-historic {
-  height: 25rem;
+  height: 22rem;
   width: 15rem;
   overflow-y: auto;
   overflow-x: hidden;
@@ -146,6 +185,12 @@
 }
 body {
   padding: 2rem;
+  background: linear-gradient(
+    90deg,
+    rgba(42, 123, 155, 1) 0%,
+    rgba(87, 199, 133, 1) 50%,
+    rgba(237, 221, 83, 1) 100%
+  );
 }
 
 .autor {
@@ -173,30 +218,46 @@ body {
 .frase {
   position: relative;
   float: left;
-  width: 45vh;
-  height: 67vh;
-  border-radius: 12px;
-  padding: 0.4rem;
-  justify-items: flex-start;
-  border:  2px   solid  #a8dabe;
-  align-items: start;
-  justify-content: space-around;
+  width: 23vw;
+  height: 69vh;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   margin: 0 5rem auto 5rem;
-  font-size: 26pt; 
-  border-top-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  border-top-right-radius: 6px;
-  border-bottom-left-radius: 6px;
+  font-size: clamp(0.5em, 1vw + 1em, 2em);
+  border-top-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 0.6rem;
+  border-bottom-left-radius: 0.6rem;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
-.frase  p {
-  color: #173d25;
+.frase p {
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(
+    90deg,
+    rgba(42, 123, 155, 1) 0%,
+    rgba(87, 199, 133, 1) 100%
+  );
+  -webkit-background-clip: text;
   margin: 4rem auto auto 2rem;
   font-style: italic;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+@media (min-width: 1260px) {
+  .frase p {
+    background-image: linear-gradient(
+      90deg,
+      rgba(87, 199, 133, 1) 0%,
+      rgba(237, 221, 83, 1) 100%
+    );
+  }
 }
 
 .autor-frase {
-  font-size: 16pt;
+  font-size: 0.7em;
   font-weight: bold;
 }

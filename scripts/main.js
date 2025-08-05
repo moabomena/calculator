@@ -165,9 +165,10 @@ function addListHistoric(calculu) {
 function changeColorButtonCleanList() {
   const button = document.getElementById("clean");
   if (historicList.length > 0) {
+    button.style.display = "flex";
     button.style.backgroundColor = "#28a85d";
   } else {
-    button.style.backgroundColor = "#959996ff";
+    button.style.display = "none";
   }
 }
 
