@@ -22,46 +22,49 @@
       <div id="list-historic"></div>
     </div>
     <div class="view">
-      <div class="view-result">
-        <div class="historic" id="historic"></div>
-        <div id="view-result">0</div>
+      <div class="calculator">
+        <div class="view-result">
+          <div class="historic" id="historic"></div>
+          <div id="view-result">0</div>
+        </div>
+        <div class="wrapper">
+          <div>
+            <button class="ac" onclick="clean()">AC</button>
+          </div>
+          <button id="" class=""></button>
+          <button id="" class=""></button>
+          <div>
+            <button onclick="getOperator('/')" class="operator">/</button>
+          </div>
+          <button onclick="getNumber('7')">7</button>
+          <button onclick="getNumber('8')">8</button>
+          <button onclick="getNumber('9')">9</button>
+          <div>
+            <button onclick="getOperator('x')" class="operator">x</button>
+          </div>
+          <button onclick="getNumber('4')">4</button>
+          <button onclick="getNumber('5')">5</button>
+          <button onclick="getNumber('6')">6</button>
+          <div>
+            <button onclick="getOperator('-')" class="operator">-</button>
+          </div>
+          <button onclick="getNumber('1')">1</button>
+          <button onclick="getNumber('2')">2</button>
+          <button onclick="getNumber('3')">3</button>
+          <div>
+            <button onclick="getOperator('+')" class="operator">+</button>
+          </div>
+          <button onclick="getNumber('0')">0</button>
+          <button id="btn-ponto">.</button>
+          <button onclick="backspace()">
+            <img class="bckp" src="assets/backspace_green_50.png" />
+          </button>
+          <div>
+            <button onclick="result()" class="operator-egual">=</button>
+          </div>
+        </div>
       </div>
-      <div class="wrapper">
-        <div>
-          <button class="ac" onclick="clean()">AC</button>
-        </div>
-        <button id="" class=""></button>
-        <button id="" class=""></button>
-        <div>
-          <button onclick="getOperator('/')" class="operator">/</button>
-        </div>
-        <button onclick="getNumber('7')">7</button>
-        <button onclick="getNumber('8')">8</button>
-        <button onclick="getNumber('9')">9</button>
-        <div>
-          <button onclick="getOperator('x')" class="operator">x</button>
-        </div>
-        <button onclick="getNumber('4')">4</button>
-        <button onclick="getNumber('5')">5</button>
-        <button onclick="getNumber('6')">6</button>
-        <div>
-          <button onclick="getOperator('-')" class="operator">-</button>
-        </div>
-        <button onclick="getNumber('1')">1</button>
-        <button onclick="getNumber('2')">2</button>
-        <button onclick="getNumber('3')">3</button>
-        <div>
-          <button onclick="getOperator('+')" class="operator">+</button>
-        </div>
-        <button onclick="getNumber('0')">0</button>
-        <button id="btn-ponto">.</button>
-        <button onclick="backspace()">
-          <img class="bckp" src="assets/backspace_green_50.png" />
-        </button>
-        <div>
-          <button onclick="result()" class="operator-egual">=</button>
-        </div>
-      </div>
+      <button class="btn-historic">Historic</button>
       <p class="autor">Developed by <strong>Moab Omena</strong> 👨🏼‍💻</p>
     </div>
     <div class="frase">

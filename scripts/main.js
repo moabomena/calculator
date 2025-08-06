@@ -13,8 +13,30 @@ const updateNumber = document.getElementById("view-result");
 const elementHistoric = document.getElementById("historic");
 const btClean = document.getElementById("clean");
 const btnPonto = document.getElementById("btn-ponto");
+const btnHistoric = document.querySelector(".btn-historic");
+const calculator = document.querySelector(".calculator");
+const historicField = document.querySelector(".historic-field");
 
 btnPonto.addEventListener("click", getPonto);
+btnHistoric.addEventListener("click", showHistoric);
+
+function showHistoric() {
+  if (calculator.style.display === "none") {
+    calculator.style.display = "grid";
+    historicField.style.display = "none";
+    btnHistoric.textContent = "Historic";
+    btnHistoric.style.background = "#046d30";
+  } else {
+    calculator.style.display = "none";
+    btnHistoric.textContent = "Calculator";
+    btnHistoric.style.textAlign = "center";
+    btnHistoric.style.width = "30vw";
+    btnHistoric.style.backgroundColor = "blue";
+    historicField.style.display = "block";
+  }
+
+  console.log("cliquei no botao historico");
+}
 
 function getPonto() {
   ponto = btnPonto.innerText;

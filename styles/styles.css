@@ -43,6 +43,9 @@
   border-radius: 0.6rem;
   box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
 }
+
+.operator:hover,
+.operator-egual:hover,
 .wrapper > button:hover {
   background-color: inherit;
   color: inherit;
@@ -61,12 +64,6 @@
   border-radius: 0.6rem;
   box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
 }
-.operator:hover {
-  background-color: inherit;
-  color: inherit;
-  border: 2px solid #4fff92;
-  box-shadow: 0px 4px 8px 2px #4fff92;
-}
 
 .operator-egual {
   background-color: #1a3a26;
@@ -78,13 +75,6 @@
   text-align: center;
   border-radius: 0.6rem;
   box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
-}
-
-.operator-egual:hover {
-  background-color: inherit;
-  color: inherit;
-  border: 2px solid #4fff92;
-  box-shadow: 0px 4px 8px 2px #4fff92;
 }
 
 .view-result {
@@ -129,6 +119,24 @@
   color: rgb(22, 84, 110);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.btn-historic {
+  display: none;
+  border: none;
+  margin: 1rem auto auto 55%;
+  width: 25vw;
+  height: 5vh;
+  justify-content: center;
+  text-align: end;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  justify-items: center;
+  background-color: #046d30;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
 }
 
 .cabecalho {
@@ -236,8 +244,8 @@ body {
   color: transparent;
   background-clip: text;
   background-image: linear-gradient(
-    90deg,
-    rgba(42, 123, 155, 1) 0%,
+    -45deg,
+    rgba(42, 123, 155, 1) 50%,
     rgba(87, 199, 133, 1) 100%
   );
   -webkit-background-clip: text;
@@ -250,9 +258,9 @@ body {
 @media (min-width: 1260px) {
   .frase p {
     background-image: linear-gradient(
-      90deg,
-      rgba(87, 199, 133, 1) 0%,
-      rgba(237, 221, 83, 1) 100%
+      -45deg,
+      rgba(42, 123, 155, 1) 0%,
+      rgba(87, 199, 133, 1) 100%
     );
   }
 }
@@ -261,11 +269,17 @@ body {
   .frase {
     display: none;
   }
+
+  .historic-field {
+    display: block;
+  }
 }
 
 @media (max-width: 800px) {
   .historic-field {
     display: none;
+    width: 80vw;
+    height: 64vh;
   }
 
   .title {
@@ -291,7 +305,6 @@ body {
 
   .autor {
     margin: 3rem auto auto 15%;
-
   }
 
   .view-result {
@@ -301,11 +314,65 @@ body {
   }
 }
 
-@media  (min-width: 350px) and (max-width: 500px) {
+@media (min-width: 350px) and (max-width: 500px) {
+  .ac:hover {
+    background-color: #801111;
+    color: #fffbfb;
+    border: 2px solid #831919;
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
+  }
+  .operator:hover {
+    background-color: #a8dabe;
+    color: #173d27;
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
+    border: 2px solid #4d755f;
+  }
+  .operator-egual:hover {
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
+    background-color: #1a3a26;
+    border: 2px solid #4d755f;
+    color: #a7e4c0;
+  }
+
+  .wrapper > button:hover {
+    color: #046d30;
+    background-color: #67e78d;
+    border: 2px solid #4d755f;
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .ac:active {
+    background-color: #801111;
+    color: white;
+    border: 2px solid #ff2626;
+    box-shadow: 0px 4px 8px 2px #ff4040;
+  }
+
+  .operator:active {
+    background-color: #a8dabe;
+    color: #173d27;
+    border: 2px solid #4fff92;
+    box-shadow: 0px 4px 8px 2px #4fff92;
+  }
+
+  .operator-egual:active {
+    background-color: #1a3a26;
+    color: #a7e4c0;
+    border: 2px solid #4fff92;
+    box-shadow: 0px 4px 8px 2px #4fff92;
+  }
+
+  .wrapper > button:active {
+    color: #046d30;
+    background-color: #67e78d;
+    border: 2px solid #4fff92;
+    box-shadow: 0px 4px 8px 2px #4fff92;
+  }
+
   .view-result {
-   width: 80dvw;
+    width: 80dvw;
     margin: 0 auto 2rem auto;
-   margin-bottom: 2rem;
+    margin-bottom: 2rem;
   }
 
   .view {
@@ -313,9 +380,8 @@ body {
     margin: 0 auto;
     justify-content: center;
     align-items: center;
-
   }
-  
+
   .autor {
     margin: 2rem auto 0 15%;
   }
@@ -326,6 +392,10 @@ body {
   .title {
     overflow-wrap: break-all;
     text-align: center;
+  }
+
+  .btn-historic {
+    display: flex;
   }
 }
 
