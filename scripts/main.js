@@ -8,6 +8,14 @@ let isNewOperation = false;
 let historicList = [];
 let ponto = "";
 
+const list = document.getElementById("list-historic");
+const updateNumber = document.getElementById("view-result");
+const elementHistoric = document.getElementById("historic");
+const btClean = document.getElementById("clean");
+const btnPonto = document.getElementById("btn-ponto");
+
+btnPonto.addEventListener("click", getPonto);
+
 function getPonto() {
   ponto = btnPonto.innerText;
   if (!x.includes(ponto) && y === "0") {
@@ -18,9 +26,6 @@ function getPonto() {
     showNumberView(y);
   }
 }
-
-const btnPonto = document.getElementById("btn-ponto");
-btnPonto.addEventListener("click", getPonto);
 
 function setHistoric() {
   historic = x;
@@ -81,12 +86,10 @@ function getNumber(number) {
 }
 
 function showNumberView(number) {
-  const elementSum = document.getElementById("view-result");
-  elementSum.textContent = number;
+  updateNumber.textContent = number;
 }
 
 function showNumberHistoric(number) {
-  const elementHistoric = document.getElementById("historic");
   elementHistoric.textContent = number;
 }
 
@@ -122,11 +125,14 @@ function result() {
       default:
         break;
     }
-     showNumberHistoric(historic + " =");
-    const elementSum = document.getElementById("view-result");
-    elementSum.textContent = result.toFixed(3);
+    showNumberHistoric(historic + " =");
+    if (result % 1 !== 0) {
+      updateNumber.textContent = result.toFixed(3);
+    } else {
+      updateNumber.textContent = result.toFixed(0);
+    }
     isNewOperation = true;
-    let calcItem = calcItemHistoric(result.toFixed(6));
+    let calcItem = calcItemHistoric(result.toFixed(3));
     let hasOnList = findElementInList(calcItem);
     if (!hasOnList) {
       addListHistoric(calcItem);
@@ -147,7 +153,6 @@ function backNumber(number) {
   if (list.length > 0) {
     list.pop();
     number = list.join("");
-    const updateNumber = document.getElementById("view-result");
     updateNumber.textContent = number;
     if (list.length === 0) {
       clean();
@@ -178,17 +183,15 @@ function addListHistoric(calculu) {
 }
 
 function changeColorButtonCleanList() {
-  const button = document.getElementById("clean");
   if (historicList.length > 0) {
-    button.style.display = "flex";
-    button.style.backgroundColor = "#28a85d";
+    btClean.style.display = "flex";
+    btClean.style.backgroundColor = "#28a85d";
   } else {
-    button.style.display = "none";
+    btClean.style.display = "none";
   }
 }
 
 function loadHistoricList() {
-  const list = document.getElementById("list-historic");
   list.innerHTML = historicList
     .map((calc) => `<li>${calc}</li>`)
     .reverse()
